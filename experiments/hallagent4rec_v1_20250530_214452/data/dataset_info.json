@@ -1,0 +1,11 @@
+{
+  "dataset": "MovieLens 100K",
+  "n_users": 943,
+  "n_items": 1682,
+  "n_ratings": 100000,
+  "rating_scale": "1-5",
+  "sparsity": 0.9369533063577546,
+  "genres": 19,
+  "avg_ratings_per_user": 106.04453870625663,
+  "avg_ratings_per_item": 59.45303210463734
+}

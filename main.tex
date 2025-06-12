@@ -1,0 +1,170 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages for ATS compatibility
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+% Remove page numbers
+\pagenumbering{gobble}
+
+% Configure hyperlinks (ATS-friendly)
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0}
+}
+
+% Font selection (ATS-friendly fonts)
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Section formatting for ATS compatibility
+\titleformat{\section}
+{\large\bfseries\uppercase}
+{}
+{0em}
+{}[\titlerule]
+
+\titleformat{\subsection}
+{\normalsize\bfseries}
+{}
+{0em}
+{}
+
+% Remove extra spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% Custom commands for consistent formatting
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeEducationSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      #3 & #4 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+% List formatting for ATS compatibility
+\renewcommand{\labelitemii}{$\circ$}
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{center}
+    \textbf{\Large YOUR FULL NAME} \\
+    \vspace{0.5em}
+    Street Address, Suburb, State, Postcode \\
+    Mobile: +61 4XX XXX XXX $|$ Email: your.email@domain.com \\
+    LinkedIn: linkedin.com/in/yourprofile $|$ Portfolio: yourwebsite.com
+\end{center}
+
+%----------PROFESSIONAL SUMMARY-----------------
+\section{Professional Summary}
+Results-driven [Your Profession] with [X] years of experience in [relevant industry/field]. Proven track record in [key achievement areas]. Seeking to leverage expertise in [relevant skills] to contribute to [target role/company type]. Strong background in [relevant technical/soft skills] with demonstrated ability to [key capability].
+
+%----------CORE COMPETENCIES-----------------
+\section{Core Competencies}
+\begin{itemize}[leftmargin=0.5cm, rightmargin=0.5cm]
+    \item \textbf{Technical Skills:} List relevant technical skills, software, programming languages, tools
+    \item \textbf{Industry Knowledge:} Relevant industry expertise, regulations, standards
+    \item \textbf{Leadership:} Team management, project leadership, stakeholder engagement
+    \item \textbf{Communication:} Written communication, presentation skills, client relations
+\end{itemize}
+
+%----------PROFESSIONAL EXPERIENCE-----------------
+\section{Professional Experience}
+\begin{itemize}[leftmargin=*]
+    \resumeSubheading
+      {Job Title}{City, State}
+      {Company Name}{Month Year - Present}
+      \begin{itemize}[leftmargin=*]
+        \resumeItem{Quantified achievement using action verbs (e.g., "Increased sales by 25\% through implementation of new CRM system")}
+        \resumeItem{Another specific accomplishment with measurable results}
+        \resumeItem{Technical project or process improvement with business impact}
+        \resumeItem{Leadership or collaboration achievement}
+      \end{itemize}
+      
+    \resumeSubheading
+      {Previous Job Title}{City, State}
+      {Previous Company Name}{Month Year - Month Year}
+      \begin{itemize}[leftmargin=*]
+        \resumeItem{Key achievement with specific metrics and business impact}
+        \resumeItem{Process improvement or cost-saving initiative}
+        \resumeItem{Cross-functional collaboration or client management success}
+        \resumeItem{Technical implementation or system optimization}
+      \end{itemize}
+      
+    \resumeSubheading
+      {Earlier Job Title}{City, State}
+      {Earlier Company Name}{Month Year - Month Year}
+      \begin{itemize}[leftmargin=*]
+        \resumeItem{Relevant achievement that demonstrates career progression}
+        \resumeItem{Skill development or certification completion}
+        \resumeItem{Team contribution or individual excellence}
+      \end{itemize}
+\end{itemize}
+
+%----------EDUCATION-----------------
+\section{Education}
+\begin{itemize}[leftmargin=*]
+    \resumeEducationSubheading
+      {Degree Title (e.g., Bachelor of Science in Computer Science)}{City, State}
+      {University Name}{Year of Graduation}
+      \begin{itemize}[leftmargin=*]
+        \resumeItem{Relevant coursework: List key subjects relevant to target role}
+        \resumeItem{Academic achievement: GPA (if above 3.5), awards, honours}
+        \resumeItem{Projects: Brief description of relevant capstone or major projects}
+      \end{itemize}
+\end{itemize}
+
+%----------CERTIFICATIONS AND TRAINING-----------------
+\section{Certifications and Professional Development}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Professional Certification Name} - Issuing Organization, Year
+    \item \textbf{Industry-Specific Certification} - Certification Body, Year
+    \item \textbf{Training Program or Workshop} - Provider, Year
+    \item \textbf{Relevant Course or Specialization} - Platform/Institution, Year
+\end{itemize}
+
+%----------PROJECTS (Optional - include if relevant)-----------------
+\section{Key Projects}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Project Name:} Brief description of project scope, your role, technologies used, and measurable outcomes achieved.
+    \item \textbf{Another Project:} Focus on projects that demonstrate skills relevant to your target role, including any team leadership or technical complexity.
+\end{itemize}
+
+%----------AWARDS AND ACHIEVEMENTS (Optional)-----------------
+\section{Awards and Recognition}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Award Name} - Organization, Year: Brief description of achievement
+    \item \textbf{Recognition Title} - Company/Institution, Year: Context of recognition
+\end{itemize}
+
+%----------ADDITIONAL INFORMATION (Optional)-----------------
+\section{Additional Information}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Languages:} English (Native), [Other languages and proficiency levels]
+    \item \textbf{Volunteer Work:} Relevant volunteer experience that demonstrates skills
+    \item \textbf{Professional Memberships:} Member of relevant professional associations
+    \item \textbf{Publications:} Any relevant publications, articles, or speaking engagements
+\end{itemize}
+
+\end{document}

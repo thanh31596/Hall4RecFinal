@@ -1,0 +1,14 @@
+timestamp,step,phase,metrics.train_matrix_shape,metrics.test_matrix_shape,metrics.train_interactions,metrics.test_interactions,metrics.item_features_shape,metrics.train_sparsity,metrics.test_sparsity,additional_info.status,metrics.personality_vectors_shape,metrics.personality_vector_norm_mean,metrics.loaded_from_file,metrics.cf_user_vectors_shape,metrics.cf_item_vectors_shape,metrics.cf_user_vector_norm_mean,metrics.cf_item_vector_norm_mean,metrics.fused_vectors_shape,metrics.fused_vector_norm_mean,metrics.context_weights_shape,metrics.item_biases_mean,metrics.item_biases_std,metrics.transfer_matrix_shape,metrics.transfer_matrix_norm,metrics.projection_matrix_shape,metrics.projection_matrix_norm
+2025-05-31T19:11:34.832443,0,data_preparation,"[943, 1656]","[943, 1408]",80000.0,20000.0,"[1682, 20]",0.9487707542481852,0.9849368552974067,,,,,,,,,,,,,,,,,
+2025-05-31T19:11:41.991003,1,personality_loading,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T19:11:42.140542,1,personality_loading,,,,,,,,completed,"[943, 384]",0.9999999988194848,True,,,,,,,,,,,,,
+2025-05-31T19:11:42.141335,2,collaborative_filtering,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T19:12:16.655325,2,collaborative_filtering,,,,,,,,completed,,,,"[943, 32]","[1656, 32]",2.6811703133781104,2.1146865934092838,,,,,,,,,
+2025-05-31T19:12:16.656073,3,attention_fusion,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T19:12:16.691725,3,attention_fusion,,,,,,,,completed,,,,,,,,"[943, 32]",1.3669781011885425,,,,,,,
+2025-05-31T19:12:16.692372,4,context_learning,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T19:12:16.705965,4,context_learning,,,,,,,,completed,,,,,,,,,,[10],3.0871949943196557,0.793771052606739,,,,
+2025-05-31T19:12:16.706466,5,transfer_matrix,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T19:12:17.525973,5,transfer_matrix,,,,,,,,completed,,,,,,,,,,,,,"[32, 20]",0.5174206441011874,,
+2025-05-31T19:12:17.526589,6,projection_matrix,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T19:12:17.528239,6,projection_matrix,,,,,,,,completed,,,,,,,,,,,,,,,"[32, 8]",2.8284271247461907

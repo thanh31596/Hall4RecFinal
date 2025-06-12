@@ -1,0 +1,74 @@
+2025-05-31 19:05:07,952 - hallagent4rec_analysis_20250531_190507 - INFO - Experiment hallagent4rec_analysis_20250531_190507 started
+2025-05-31 19:05:07,953 - hallagent4rec_analysis_20250531_190507 - INFO - ============================================================
+2025-05-31 19:05:07,954 - hallagent4rec_analysis_20250531_190507 - INFO - STARTING HALLAGENT4REC ANALYSIS (PRE-GENERATED PERSONALITIES)
+2025-05-31 19:05:07,954 - hallagent4rec_analysis_20250531_190507 - INFO - ============================================================
+2025-05-31 19:05:07,955 - hallagent4rec_analysis_20250531_190507 - INFO - Configuration saved
+2025-05-31 19:05:07,955 - hallagent4rec_analysis_20250531_190507 - INFO - Config: {
+  "data_path": "./ml-100k/",
+  "personalities_path": "./personalities.json",
+  "experiment_name": "hallagent4rec_analysis",
+  "config_size": "small",
+  "random_seed": 42,
+  "run_ablation": false,
+  "skip_online": false,
+  "force_generate": false,
+  "timestamp": "2025-05-31T19:05:07.954272",
+  "latent_dim": 32,
+  "low_rank_dim": 8,
+  "cf_reg_u": 0.01,
+  "cf_reg_v": 0.01,
+  "cf_learning_rate": 0.01,
+  "cf_max_iterations": 50,
+  "transfer_reg": 0.1,
+  "online_lr_theta": 0.01,
+  "online_reg_theta": 0.1,
+  "context_lr": 0.001,
+  "bias_lr": 0.01,
+  "replacement_alpha": 0.4,
+  "llm_temperature": 0.0,
+  "llm_max_tokens": null,
+  "top_k": 10,
+  "test_ratio": 0.2,
+  "model_save_path": "experiments/hallagent4rec_analysis_20250531_190507/models",
+  "results_path": "experiments/hallagent4rec_analysis_20250531_190507/results"
+}
+2025-05-31 19:05:07,955 - hallagent4rec_analysis_20250531_190507 - INFO - Initializing LLM for online recommendation phase...
+2025-05-31 19:05:07,959 - hallagent4rec_analysis_20250531_190507 - INFO - Loading and preparing data...
+2025-05-31 19:05:08,014 - hallagent4rec_analysis_20250531_190507 - INFO - Dataset information saved
+2025-05-31 19:05:08,014 - hallagent4rec_analysis_20250531_190507 - INFO - Dataset: {
+  "dataset": "MovieLens 100K",
+  "n_users": 943,
+  "n_items": 1682,
+  "n_ratings": 100000,
+  "rating_scale": "1-5",
+  "sparsity": 0.9369533063577546,
+  "genres": 19,
+  "avg_ratings_per_user": 106.04453870625663,
+  "avg_ratings_per_item": 59.45303210463734
+}
+2025-05-31 19:05:08,190 - hallagent4rec_analysis_20250531_190507 - INFO - Step 0 (data_preparation): train_matrix_shape: (943, 1656), test_matrix_shape: (943, 1408), train_interactions: 80000, test_interactions: 20000, item_features_shape: (1682, 20), train_sparsity: 0.9488, test_sparsity: 0.9849
+2025-05-31 19:05:08,191 - hallagent4rec_analysis_20250531_190507 - INFO - Initializing HallAgent4Rec model...
+2025-05-31 19:05:11,620 - hallagent4rec_analysis_20250531_190507 - INFO - Starting offline training phase...
+2025-05-31 19:05:14,993 - hallagent4rec_analysis_20250531_190507 - INFO - Step 1 (personality_loading): no metrics
+2025-05-31 19:05:14,994 - hallagent4rec_analysis_20250531_190507 - INFO - Loading pre-generated personalities from ./personalities.json
+2025-05-31 19:05:15,145 - hallagent4rec_analysis_20250531_190507 - INFO - Step 1 (personality_loading): personality_vectors_shape: (943, 384), personality_vector_norm_mean: 1.0000, loaded_from_file: True
+2025-05-31 19:05:15,146 - hallagent4rec_analysis_20250531_190507 - INFO - Step 2 (collaborative_filtering): no metrics
+2025-05-31 19:05:50,296 - hallagent4rec_analysis_20250531_190507 - INFO - Step 2 (collaborative_filtering): cf_user_vectors_shape: (943, 32), cf_item_vectors_shape: (1656, 32), cf_user_vector_norm_mean: 2.6812, cf_item_vector_norm_mean: 2.1147
+2025-05-31 19:05:50,297 - hallagent4rec_analysis_20250531_190507 - INFO - Step 3 (attention_fusion): no metrics
+2025-05-31 19:05:50,336 - hallagent4rec_analysis_20250531_190507 - INFO - Step 3 (attention_fusion): fused_vectors_shape: (943, 32), fused_vector_norm_mean: 1.3670
+2025-05-31 19:05:50,336 - hallagent4rec_analysis_20250531_190507 - INFO - Step 4 (context_learning): no metrics
+2025-05-31 19:05:50,349 - hallagent4rec_analysis_20250531_190507 - INFO - Step 4 (context_learning): context_weights_shape: (10,), item_biases_mean: 3.0872, item_biases_std: 0.7938
+2025-05-31 19:05:50,350 - hallagent4rec_analysis_20250531_190507 - INFO - Step 5 (transfer_matrix): no metrics
+2025-05-31 19:05:51,181 - hallagent4rec_analysis_20250531_190507 - INFO - Step 5 (transfer_matrix): transfer_matrix_shape: (32, 20), transfer_matrix_norm: 0.5174
+2025-05-31 19:05:51,181 - hallagent4rec_analysis_20250531_190507 - INFO - Step 6 (projection_matrix): no metrics
+2025-05-31 19:05:51,182 - hallagent4rec_analysis_20250531_190507 - INFO - Step 6 (projection_matrix): projection_matrix_shape: (8, 32), projection_matrix_norm: 2.8284
+2025-05-31 19:05:51,188 - hallagent4rec_analysis_20250531_190507 - INFO - Model saved: experiments/hallagent4rec_analysis_20250531_190507/models/hallagent4rec_model.pkl (0.81 MB)
+2025-05-31 19:05:51,188 - hallagent4rec_analysis_20250531_190507 - INFO - Training time: 0h 0m 40s
+2025-05-31 19:05:51,188 - hallagent4rec_analysis_20250531_190507 - INFO - Starting evaluation phase...
+2025-05-31 19:05:51,226 - hallagent4rec_analysis_20250531_190507 - ERROR - Analysis failed: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 19:05:51,232 - hallagent4rec_analysis_20250531_190507 - ERROR - Traceback (most recent call last):
+  File "/Users/stephenvu9686/Desktop/Python Work/GenAI /final_hall4rec/main.py", line 386, in main
+    online_score = user_vec @ model.projection_matrix_B @ model.online_learner.online_factors[item_id]
+                   ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+

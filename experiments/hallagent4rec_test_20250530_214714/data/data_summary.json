@@ -1,0 +1,16 @@
+{
+  "train_matrix_shape": [
+    943,
+    1656
+  ],
+  "test_matrix_shape": [
+    943,
+    1408
+  ],
+  "item_features_shape": [
+    1682,
+    20
+  ],
+  "n_users": 943,
+  "n_items": 1682
+}

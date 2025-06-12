@@ -1,0 +1,176 @@
+[
+  {
+    "timestamp": "2025-05-30T21:47:14.997649",
+    "step": 0,
+    "phase": "data_preparation",
+    "metrics": {
+      "train_matrix_shape": [
+        943,
+        1656
+      ],
+      "test_matrix_shape": [
+        943,
+        1408
+      ],
+      "train_interactions": 80000.0,
+      "test_interactions": 20000.0,
+      "item_features_shape": [
+        1682,
+        20
+      ],
+      "train_sparsity": 0.9487707542481852,
+      "test_sparsity": 0.9849368552974067
+    },
+    "additional_info": {}
+  },
+  {
+    "timestamp": "2025-05-30T21:47:21.425159",
+    "step": 1,
+    "phase": "collaborative_filtering",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-30T21:47:57.008419",
+    "step": 1,
+    "phase": "collaborative_filtering",
+    "metrics": {
+      "cf_user_vectors_shape": [
+        943,
+        32
+      ],
+      "cf_item_vectors_shape": [
+        1656,
+        32
+      ],
+      "cf_user_vector_norm_mean": 2.6811703133781104,
+      "cf_item_vector_norm_mean": 2.1146865934092838
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-30T21:47:57.009547",
+    "step": 2,
+    "phase": "personality_generation",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.046717",
+    "step": 2,
+    "phase": "personality_generation",
+    "metrics": {
+      "personality_vectors_shape": [
+        943,
+        384
+      ],
+      "personality_vector_norm_mean": 1.0
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.050279",
+    "step": 3,
+    "phase": "attention_fusion",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.120962",
+    "step": 3,
+    "phase": "attention_fusion",
+    "metrics": {
+      "fused_vectors_shape": [
+        943,
+        32
+      ],
+      "fused_vector_norm_mean": 1.366633775669817,
+      "attention_weight_mean": 0.5
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.121516",
+    "step": 4,
+    "phase": "context_learning",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.152021",
+    "step": 4,
+    "phase": "context_learning",
+    "metrics": {
+      "context_weights_shape": [
+        10
+      ],
+      "item_biases_mean": 3.0871949943196557,
+      "item_biases_std": 0.793771052606739
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.152930",
+    "step": 5,
+    "phase": "transfer_matrix",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.979269",
+    "step": 5,
+    "phase": "transfer_matrix",
+    "metrics": {
+      "transfer_matrix_shape": [
+        32,
+        20
+      ],
+      "transfer_matrix_norm": 0.5939155615135557
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.979795",
+    "step": 6,
+    "phase": "projection_matrix",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T05:56:03.981154",
+    "step": 6,
+    "phase": "projection_matrix",
+    "metrics": {
+      "projection_matrix_shape": [
+        8,
+        32
+      ],
+      "projection_matrix_norm": 2.8284271247461907
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  }
+]

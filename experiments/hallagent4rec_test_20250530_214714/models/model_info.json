@@ -1,0 +1,27 @@
+{
+  "model_path": "experiments/hallagent4rec_test_20250530_214714/models/hallagent4rec_model.pkl",
+  "model_size_bytes": 847294,
+  "model_size_mb": 0.8080425262451172,
+  "training_time_seconds": 29322.5583820343,
+  "training_time_formatted": "8h 8m 43s",
+  "parameters": {
+    "user_vectors_shape": [
+      943,
+      32
+    ],
+    "item_vectors_shape": [
+      1656,
+      32
+    ],
+    "transfer_matrix_shape": [
+      32,
+      20
+    ],
+    "projection_matrix_shape": [
+      8,
+      32
+    ],
+    "total_parameters": 84064.0
+  },
+  "timestamp": "2025-05-31T05:56:04.005329"
+}

@@ -1,0 +1,55 @@
+{
+  "experiment_info": {
+    "name": "hallagent4rec_test",
+    "id": "hallagent4rec_test_20250530_214714",
+    "start_time": "2025-05-30T21:47:14.735433",
+    "total_duration_seconds": 29331.52090907097,
+    "total_duration_formatted": "8h 8m 52s"
+  },
+  "api_usage": {
+    "total_calls": 1287,
+    "successful_calls": 895,
+    "failed_calls": 392,
+    "total_cost_estimate": 0.8950000000000007,
+    "rate_limit_hits": 392
+  },
+  "training_summary": {
+    "total_training_steps": 13,
+    "phases_completed": [
+      "projection_matrix",
+      "transfer_matrix",
+      "data_preparation",
+      "attention_fusion",
+      "collaborative_filtering",
+      "personality_generation",
+      "context_learning"
+    ]
+  },
+  "evaluation_summary": {
+    "evaluations_completed": 1,
+    "final_metrics": {
+      "timestamp": "2025-05-31T05:56:04.243650",
+      "phase": "main_evaluation",
+      "results": {
+        "RMSE": 2.409520488034823,
+        "MAE": 2.0560224089635852,
+        "HitRate@5": 0.0163265306122449,
+        "NDCG@5": 0.058394961554016044,
+        "MRR@5": 0.05102040816326531,
+        "HitRate@10": 0.056859410430839,
+        "NDCG@10": 0.11533846461343801,
+        "MRR@10": 0.07673307418205377,
+        "HitRate@20": 0.050629925629925625,
+        "NDCG@20": 0.11533846461343801,
+        "MRR@20": 0.07673307418205377,
+        "CatalogCoverage": 0.007102272727272727,
+        "AvgDiversity": 1.0
+      },
+      "additional_metrics": {
+        "evaluation_time": 0.012905359268188477,
+        "n_test_users": 50,
+        "n_candidate_items": 200
+      }
+    }
+  }
+}

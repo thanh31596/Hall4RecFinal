@@ -1,0 +1,14 @@
+timestamp,step,phase,metrics.train_matrix_shape,metrics.test_matrix_shape,metrics.train_interactions,metrics.test_interactions,metrics.item_features_shape,metrics.train_sparsity,metrics.test_sparsity,additional_info.status,metrics.cf_user_vectors_shape,metrics.cf_item_vectors_shape,metrics.cf_user_vector_norm_mean,metrics.cf_item_vector_norm_mean,metrics.personality_vectors_shape,metrics.personality_vector_norm_mean,metrics.fused_vectors_shape,metrics.fused_vector_norm_mean,metrics.attention_weight_mean,metrics.context_weights_shape,metrics.item_biases_mean,metrics.item_biases_std,metrics.transfer_matrix_shape,metrics.transfer_matrix_norm,metrics.projection_matrix_shape,metrics.projection_matrix_norm
+2025-05-30T21:47:14.997649,0,data_preparation,"[943, 1656]","[943, 1408]",80000.0,20000.0,"[1682, 20]",0.9487707542481852,0.9849368552974067,,,,,,,,,,,,,,,,,
+2025-05-30T21:47:21.425159,1,collaborative_filtering,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-30T21:47:57.008419,1,collaborative_filtering,,,,,,,,completed,"[943, 32]","[1656, 32]",2.6811703133781104,2.1146865934092838,,,,,,,,,,,,
+2025-05-30T21:47:57.009547,2,personality_generation,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T05:56:03.046717,2,personality_generation,,,,,,,,completed,,,,,"[943, 384]",1.0,,,,,,,,,,
+2025-05-31T05:56:03.050279,3,attention_fusion,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T05:56:03.120962,3,attention_fusion,,,,,,,,completed,,,,,,,"[943, 32]",1.366633775669817,0.5,,,,,,,
+2025-05-31T05:56:03.121516,4,context_learning,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T05:56:03.152021,4,context_learning,,,,,,,,completed,,,,,,,,,,[10],3.0871949943196557,0.793771052606739,,,,
+2025-05-31T05:56:03.152930,5,transfer_matrix,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T05:56:03.979269,5,transfer_matrix,,,,,,,,completed,,,,,,,,,,,,,"[32, 20]",0.5939155615135557,,
+2025-05-31T05:56:03.979795,6,projection_matrix,,,,,,,,starting,,,,,,,,,,,,,,,,
+2025-05-31T05:56:03.981154,6,projection_matrix,,,,,,,,completed,,,,,,,,,,,,,,,"[8, 32]",2.8284271247461907

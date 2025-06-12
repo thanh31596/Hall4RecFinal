@@ -1,0 +1,63 @@
+2025-05-30 21:44:04,067 - hallagent4rec_v1_20250530_214404 - INFO - Experiment hallagent4rec_v1_20250530_214404 started
+2025-05-30 21:44:04,068 - hallagent4rec_v1_20250530_214404 - INFO - ============================================================
+2025-05-30 21:44:04,068 - hallagent4rec_v1_20250530_214404 - INFO - STARTING HALLAGENT4REC COMPREHENSIVE ANALYSIS
+2025-05-30 21:44:04,068 - hallagent4rec_v1_20250530_214404 - INFO - ============================================================
+2025-05-30 21:44:04,068 - hallagent4rec_v1_20250530_214404 - INFO - Configuration saved
+2025-05-30 21:44:04,068 - hallagent4rec_v1_20250530_214404 - INFO - Config: {
+  "data_path": "./ml-100k/",
+  "experiment_name": "hallagent4rec_v1",
+  "config_size": "small",
+  "random_seed": 42,
+  "run_ablation": true,
+  "timestamp": "2025-05-30T21:44:04.068496",
+  "latent_dim": 32,
+  "low_rank_dim": 8,
+  "cf_reg_u": 0.01,
+  "cf_reg_v": 0.01,
+  "cf_learning_rate": 0.01,
+  "cf_max_iterations": 50,
+  "transfer_reg": 0.1,
+  "online_lr_theta": 0.01,
+  "online_reg_theta": 0.1,
+  "context_lr": 0.001,
+  "bias_lr": 0.01,
+  "replacement_alpha": 0.4,
+  "llm_temperature": 0.0,
+  "llm_max_tokens": null,
+  "top_k": 10,
+  "test_ratio": 0.2,
+  "model_save_path": "experiments/hallagent4rec_v1_20250530_214404/models",
+  "results_path": "experiments/hallagent4rec_v1_20250530_214404/results"
+}
+2025-05-30 21:44:04,069 - hallagent4rec_v1_20250530_214404 - INFO - Initializing LLM and embeddings...
+2025-05-30 21:44:12,925 - hallagent4rec_v1_20250530_214404 - ERROR - Analysis failed: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-05-30 21:44:12,937 - hallagent4rec_v1_20250530_214404 - ERROR - Traceback (most recent call last):
+  File "/Users/stephenvu9686/Desktop/Python Work/GenAI /final_hall4rec/main.py", line 117, in main
+    llm, embeddings_model = initialize_llm()
+                            ^^^^^^^^^^^^^^^^
+  File "/Users/stephenvu9686/Desktop/Python Work/GenAI /final_hall4rec/main.py", line 34, in initialize_llm
+    llm = ChatGoogleGenerativeAI(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/langchain_core/load/serializable.py", line 125, in __init__
+    super().__init__(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.12/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/langchain_google_genai/chat_models.py", line 843, in validate_environment
+    self.client = genaix.build_generative_service(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/langchain_google_genai/_genai_extension.py", line 276, in build_generative_service
+    return v1betaGenerativeServiceClient(**config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 667, in __init__
+    self._transport = transport_init(
+                      ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/transports/grpc.py", line 235, in __init__
+    super().__init__(
+  File "/opt/anaconda3/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/transports/base.py", line 100, in __init__
+    credentials, _ = google.auth.default(
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/google/auth/_default.py", line 719, in default
+    raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+google.auth.exceptions.DefaultCredentialsError: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+

@@ -1,0 +1,176 @@
+[
+  {
+    "timestamp": "2025-05-31T19:05:08.190494",
+    "step": 0,
+    "phase": "data_preparation",
+    "metrics": {
+      "train_matrix_shape": [
+        943,
+        1656
+      ],
+      "test_matrix_shape": [
+        943,
+        1408
+      ],
+      "train_interactions": 80000.0,
+      "test_interactions": 20000.0,
+      "item_features_shape": [
+        1682,
+        20
+      ],
+      "train_sparsity": 0.9487707542481852,
+      "test_sparsity": 0.9849368552974067
+    },
+    "additional_info": {}
+  },
+  {
+    "timestamp": "2025-05-31T19:05:14.993678",
+    "step": 1,
+    "phase": "personality_loading",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:15.145536",
+    "step": 1,
+    "phase": "personality_loading",
+    "metrics": {
+      "personality_vectors_shape": [
+        943,
+        384
+      ],
+      "personality_vector_norm_mean": 0.9999999988194848,
+      "loaded_from_file": true
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:15.146340",
+    "step": 2,
+    "phase": "collaborative_filtering",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:50.296498",
+    "step": 2,
+    "phase": "collaborative_filtering",
+    "metrics": {
+      "cf_user_vectors_shape": [
+        943,
+        32
+      ],
+      "cf_item_vectors_shape": [
+        1656,
+        32
+      ],
+      "cf_user_vector_norm_mean": 2.6811703133781104,
+      "cf_item_vector_norm_mean": 2.1146865934092838
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:50.297517",
+    "step": 3,
+    "phase": "attention_fusion",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:50.336170",
+    "step": 3,
+    "phase": "attention_fusion",
+    "metrics": {
+      "fused_vectors_shape": [
+        943,
+        32
+      ],
+      "fused_vector_norm_mean": 1.3669781011885425
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:50.336897",
+    "step": 4,
+    "phase": "context_learning",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:50.349859",
+    "step": 4,
+    "phase": "context_learning",
+    "metrics": {
+      "context_weights_shape": [
+        10
+      ],
+      "item_biases_mean": 3.0871949943196557,
+      "item_biases_std": 0.793771052606739
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:50.350557",
+    "step": 5,
+    "phase": "transfer_matrix",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:51.181004",
+    "step": 5,
+    "phase": "transfer_matrix",
+    "metrics": {
+      "transfer_matrix_shape": [
+        32,
+        20
+      ],
+      "transfer_matrix_norm": 0.5174206441011874
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:51.181621",
+    "step": 6,
+    "phase": "projection_matrix",
+    "metrics": {},
+    "additional_info": {
+      "status": "starting"
+    }
+  },
+  {
+    "timestamp": "2025-05-31T19:05:51.182530",
+    "step": 6,
+    "phase": "projection_matrix",
+    "metrics": {
+      "projection_matrix_shape": [
+        8,
+        32
+      ],
+      "projection_matrix_norm": 2.8284271247461907
+    },
+    "additional_info": {
+      "status": "completed"
+    }
+  }
+]

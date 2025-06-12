@@ -1,0 +1,84 @@
+2025-05-31 19:11:34,593 - hallagent4rec_analysis_20250531_191134 - INFO - Experiment hallagent4rec_analysis_20250531_191134 started
+2025-05-31 19:11:34,596 - hallagent4rec_analysis_20250531_191134 - INFO - ============================================================
+2025-05-31 19:11:34,596 - hallagent4rec_analysis_20250531_191134 - INFO - STARTING HALLAGENT4REC ANALYSIS (PRE-GENERATED PERSONALITIES)
+2025-05-31 19:11:34,596 - hallagent4rec_analysis_20250531_191134 - INFO - ============================================================
+2025-05-31 19:11:34,598 - hallagent4rec_analysis_20250531_191134 - INFO - Configuration saved
+2025-05-31 19:11:34,598 - hallagent4rec_analysis_20250531_191134 - INFO - Config: {
+  "data_path": "./ml-100k/",
+  "personalities_path": "./personalities.json",
+  "experiment_name": "hallagent4rec_analysis",
+  "config_size": "small",
+  "random_seed": 42,
+  "run_ablation": false,
+  "skip_online": false,
+  "force_generate": false,
+  "timestamp": "2025-05-31T19:11:34.596928",
+  "latent_dim": 32,
+  "low_rank_dim": 8,
+  "cf_reg_u": 0.01,
+  "cf_reg_v": 0.01,
+  "cf_learning_rate": 0.01,
+  "cf_max_iterations": 50,
+  "transfer_reg": 0.1,
+  "online_lr_theta": 0.01,
+  "online_reg_theta": 0.1,
+  "context_lr": 0.001,
+  "bias_lr": 0.01,
+  "replacement_alpha": 0.4,
+  "llm_temperature": 0.0,
+  "llm_max_tokens": null,
+  "top_k": 10,
+  "test_ratio": 0.2,
+  "model_save_path": "experiments/hallagent4rec_analysis_20250531_191134/models",
+  "results_path": "experiments/hallagent4rec_analysis_20250531_191134/results"
+}
+2025-05-31 19:11:34,598 - hallagent4rec_analysis_20250531_191134 - INFO - Initializing LLM for online recommendation phase...
+2025-05-31 19:11:34,605 - hallagent4rec_analysis_20250531_191134 - INFO - Loading and preparing data...
+2025-05-31 19:11:34,657 - hallagent4rec_analysis_20250531_191134 - INFO - Dataset information saved
+2025-05-31 19:11:34,657 - hallagent4rec_analysis_20250531_191134 - INFO - Dataset: {
+  "dataset": "MovieLens 100K",
+  "n_users": 943,
+  "n_items": 1682,
+  "n_ratings": 100000,
+  "rating_scale": "1-5",
+  "sparsity": 0.9369533063577546,
+  "genres": 19,
+  "avg_ratings_per_user": 106.04453870625663,
+  "avg_ratings_per_item": 59.45303210463734
+}
+2025-05-31 19:11:34,832 - hallagent4rec_analysis_20250531_191134 - INFO - Step 0 (data_preparation): train_matrix_shape: (943, 1656), test_matrix_shape: (943, 1408), train_interactions: 80000, test_interactions: 20000, item_features_shape: (1682, 20), train_sparsity: 0.9488, test_sparsity: 0.9849
+2025-05-31 19:11:34,833 - hallagent4rec_analysis_20250531_191134 - INFO - Initializing HallAgent4Rec model...
+2025-05-31 19:11:38,820 - hallagent4rec_analysis_20250531_191134 - INFO - Starting offline training phase...
+2025-05-31 19:11:41,991 - hallagent4rec_analysis_20250531_191134 - INFO - Step 1 (personality_loading): no metrics
+2025-05-31 19:11:41,991 - hallagent4rec_analysis_20250531_191134 - INFO - Loading pre-generated personalities from ./personalities.json
+2025-05-31 19:11:42,140 - hallagent4rec_analysis_20250531_191134 - INFO - Step 1 (personality_loading): personality_vectors_shape: (943, 384), personality_vector_norm_mean: 1.0000, loaded_from_file: True
+2025-05-31 19:11:42,141 - hallagent4rec_analysis_20250531_191134 - INFO - Step 2 (collaborative_filtering): no metrics
+2025-05-31 19:12:16,655 - hallagent4rec_analysis_20250531_191134 - INFO - Step 2 (collaborative_filtering): cf_user_vectors_shape: (943, 32), cf_item_vectors_shape: (1656, 32), cf_user_vector_norm_mean: 2.6812, cf_item_vector_norm_mean: 2.1147
+2025-05-31 19:12:16,656 - hallagent4rec_analysis_20250531_191134 - INFO - Step 3 (attention_fusion): no metrics
+2025-05-31 19:12:16,691 - hallagent4rec_analysis_20250531_191134 - INFO - Step 3 (attention_fusion): fused_vectors_shape: (943, 32), fused_vector_norm_mean: 1.3670
+2025-05-31 19:12:16,692 - hallagent4rec_analysis_20250531_191134 - INFO - Step 4 (context_learning): no metrics
+2025-05-31 19:12:16,706 - hallagent4rec_analysis_20250531_191134 - INFO - Step 4 (context_learning): context_weights_shape: (10,), item_biases_mean: 3.0872, item_biases_std: 0.7938
+2025-05-31 19:12:16,706 - hallagent4rec_analysis_20250531_191134 - INFO - Step 5 (transfer_matrix): no metrics
+2025-05-31 19:12:17,526 - hallagent4rec_analysis_20250531_191134 - INFO - Step 5 (transfer_matrix): transfer_matrix_shape: (32, 20), transfer_matrix_norm: 0.5174
+2025-05-31 19:12:17,526 - hallagent4rec_analysis_20250531_191134 - INFO - Step 6 (projection_matrix): no metrics
+2025-05-31 19:12:17,528 - hallagent4rec_analysis_20250531_191134 - INFO - Step 6 (projection_matrix): projection_matrix_shape: (32, 8), projection_matrix_norm: 2.8284
+2025-05-31 19:12:17,538 - hallagent4rec_analysis_20250531_191134 - INFO - Model saved: experiments/hallagent4rec_analysis_20250531_191134/models/hallagent4rec_model.pkl (0.81 MB)
+2025-05-31 19:12:17,538 - hallagent4rec_analysis_20250531_191134 - INFO - Training time: 0h 0m 39s
+2025-05-31 19:12:17,538 - hallagent4rec_analysis_20250531_191134 - INFO - Starting evaluation phase...
+2025-05-31 19:12:17,746 - hallagent4rec_analysis_20250531_191134 - INFO - Starting online recommendation phase with LLM...
+2025-05-31 19:12:17,746 - hallagent4rec_analysis_20250531_191134 - INFO - LLM evaluation user 0/10
+2025-05-31 19:13:24,002 - hallagent4rec_analysis_20250531_191134 - INFO - LLM evaluation user 5/10
+2025-05-31 19:14:32,081 - hallagent4rec_analysis_20250531_191134 - INFO - Online recommendation phase completed in 2.2 minutes
+2025-05-31 19:14:32,121 - hallagent4rec_analysis_20250531_191134 - INFO - Evaluation (main_evaluation): RMSE: 2.4269, MAE: 2.0136, HitRate@5: 0.0612, NDCG@5: 0.1732, MRR@5: 0.1466, HitRate@10: 0.0500, NDCG@10: 0.2117, MRR@10: 0.1612, HitRate@20: 0.0359, NDCG@20: 0.2117, MRR@20: 0.1612, CatalogCoverage: 0.0192, AvgDiversity: 0.9760
+2025-05-31 19:14:32,121 - hallagent4rec_analysis_20250531_191134 - INFO - Creating visualizations...
+2025-05-31 19:14:33,653 - hallagent4rec_analysis_20250531_191134 - ERROR - Error creating distribution visualization: 'numpy.ndarray' object has no attribute 'hist'
+2025-05-31 19:14:33,661 - hallagent4rec_analysis_20250531_191134 - INFO - Data exported to CSV files
+2025-05-31 19:14:33,661 - hallagent4rec_analysis_20250531_191134 - INFO - Raw data saved: final_results.json
+2025-05-31 19:14:33,662 - hallagent4rec_analysis_20250531_191134 - INFO - Raw data saved: user_recommendations.json
+2025-05-31 19:14:33,662 - hallagent4rec_analysis_20250531_191134 - INFO - Experiment completed in 0h 2m 59s
+2025-05-31 19:14:33,662 - hallagent4rec_analysis_20250531_191134 - INFO - Report generated: experiments/hallagent4rec_analysis_20250531_191134/experiment_report.json
+2025-05-31 19:14:33,662 - hallagent4rec_analysis_20250531_191134 - INFO - ============================================================
+2025-05-31 19:14:33,662 - hallagent4rec_analysis_20250531_191134 - INFO - ANALYSIS COMPLETED SUCCESSFULLY!
+2025-05-31 19:14:33,662 - hallagent4rec_analysis_20250531_191134 - INFO - Total time: 0h 2m 59s
+2025-05-31 19:14:33,663 - hallagent4rec_analysis_20250531_191134 - INFO - Results saved in: experiments/hallagent4rec_analysis_20250531_191134
+2025-05-31 19:14:33,663 - hallagent4rec_analysis_20250531_191134 - INFO - ============================================================

@@ -1,0 +1,180 @@
+2025-05-30 21:47:14,735 - hallagent4rec_test_20250530_214714 - INFO - Experiment hallagent4rec_test_20250530_214714 started
+2025-05-30 21:47:14,736 - hallagent4rec_test_20250530_214714 - INFO - ============================================================
+2025-05-30 21:47:14,736 - hallagent4rec_test_20250530_214714 - INFO - STARTING HALLAGENT4REC COMPREHENSIVE ANALYSIS
+2025-05-30 21:47:14,736 - hallagent4rec_test_20250530_214714 - INFO - ============================================================
+2025-05-30 21:47:14,736 - hallagent4rec_test_20250530_214714 - INFO - Configuration saved
+2025-05-30 21:47:14,736 - hallagent4rec_test_20250530_214714 - INFO - Config: {
+  "data_path": "./ml-100k/",
+  "experiment_name": "hallagent4rec_test",
+  "config_size": "small",
+  "random_seed": 42,
+  "run_ablation": false,
+  "timestamp": "2025-05-30T21:47:14.736187",
+  "latent_dim": 32,
+  "low_rank_dim": 8,
+  "cf_reg_u": 0.01,
+  "cf_reg_v": 0.01,
+  "cf_learning_rate": 0.01,
+  "cf_max_iterations": 50,
+  "transfer_reg": 0.1,
+  "online_lr_theta": 0.01,
+  "online_reg_theta": 0.1,
+  "context_lr": 0.001,
+  "bias_lr": 0.01,
+  "replacement_alpha": 0.4,
+  "llm_temperature": 0.0,
+  "llm_max_tokens": null,
+  "top_k": 10,
+  "test_ratio": 0.2,
+  "model_save_path": "experiments/hallagent4rec_test_20250530_214714/models",
+  "results_path": "experiments/hallagent4rec_test_20250530_214714/results"
+}
+2025-05-30 21:47:14,736 - hallagent4rec_test_20250530_214714 - INFO - Initializing LLM and embeddings...
+2025-05-30 21:47:14,765 - hallagent4rec_test_20250530_214714 - INFO - Loading and preparing data...
+2025-05-30 21:47:14,817 - hallagent4rec_test_20250530_214714 - INFO - Dataset information saved
+2025-05-30 21:47:14,817 - hallagent4rec_test_20250530_214714 - INFO - Dataset: {
+  "dataset": "MovieLens 100K",
+  "n_users": 943,
+  "n_items": 1682,
+  "n_ratings": 100000,
+  "rating_scale": "1-5",
+  "sparsity": 0.9369533063577546,
+  "genres": 19,
+  "avg_ratings_per_user": 106.04453870625663,
+  "avg_ratings_per_item": 59.45303210463734
+}
+2025-05-30 21:47:14,997 - hallagent4rec_test_20250530_214714 - INFO - Step 0 (data_preparation): train_matrix_shape: (943, 1656), test_matrix_shape: (943, 1408), train_interactions: 80000, test_interactions: 20000, item_features_shape: (1682, 20), train_sparsity: 0.9488, test_sparsity: 0.9849
+2025-05-30 21:47:14,998 - hallagent4rec_test_20250530_214714 - INFO - Raw data saved: data_summary.json
+2025-05-30 21:47:14,998 - hallagent4rec_test_20250530_214714 - INFO - Initializing HallAgent4Rec model...
+2025-05-30 21:47:21,424 - hallagent4rec_test_20250530_214714 - INFO - Starting training phase...
+2025-05-30 21:47:21,425 - hallagent4rec_test_20250530_214714 - INFO - Step 1 (collaborative_filtering): no metrics
+2025-05-30 21:47:57,008 - hallagent4rec_test_20250530_214714 - INFO - Step 1 (collaborative_filtering): cf_user_vectors_shape: (943, 32), cf_item_vectors_shape: (1656, 32), cf_user_vector_norm_mean: 2.6812, cf_item_vector_norm_mean: 2.1147
+2025-05-30 21:47:57,009 - hallagent4rec_test_20250530_214714 - INFO - Step 2 (personality_generation): no metrics
+2025-05-31 00:12:38,533 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d02ab10 state=finished raised ResourceExhausted>]
+2025-05-31 00:22:05,149 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d31b0b0 state=finished raised ResourceExhausted>]
+2025-05-31 00:29:32,509 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12e120 state=finished raised ResourceExhausted>]
+2025-05-31 00:36:50,794 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d15b0e0 state=finished raised ResourceExhausted>]
+2025-05-31 00:44:13,418 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16a6be7e0 state=finished raised ResourceExhausted>]
+2025-05-31 00:51:30,694 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12d700 state=finished raised ResourceExhausted>]
+2025-05-31 00:59:05,840 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d0d3710 state=finished raised ResourceExhausted>]
+2025-05-31 01:06:18,599 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d0d2390 state=finished raised ResourceExhausted>]
+2025-05-31 01:13:28,806 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x13a0feed0 state=finished raised ResourceExhausted>]
+2025-05-31 01:20:41,248 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d146420 state=finished raised ResourceExhausted>]
+2025-05-31 01:28:09,811 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d02b980 state=finished raised ResourceExhausted>]
+2025-05-31 01:35:24,463 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d146fc0 state=finished raised ResourceExhausted>]
+2025-05-31 01:42:37,003 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12fe00 state=finished raised ResourceExhausted>]
+2025-05-31 01:49:47,940 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d319d60 state=finished raised ResourceExhausted>]
+2025-05-31 01:57:02,625 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d146f60 state=finished raised ResourceExhausted>]
+2025-05-31 02:04:20,907 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12f500 state=finished raised ResourceExhausted>]
+2025-05-31 02:11:31,080 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d318440 state=finished raised ResourceExhausted>]
+2025-05-31 02:18:43,808 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d318aa0 state=finished raised ResourceExhausted>]
+2025-05-31 02:25:54,389 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12f440 state=finished raised ResourceExhausted>]
+2025-05-31 02:33:06,333 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d159850 state=finished raised ResourceExhausted>]
+2025-05-31 02:40:29,423 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12f800 state=finished raised ResourceExhausted>]
+2025-05-31 02:47:47,278 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12eff0 state=finished raised ResourceExhausted>]
+2025-05-31 02:54:59,715 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12f710 state=finished raised ResourceExhausted>]
+2025-05-31 03:02:08,258 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12c8f0 state=finished raised ResourceExhausted>]
+2025-05-31 03:09:19,353 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12c170 state=finished raised ResourceExhausted>]
+2025-05-31 03:16:39,122 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d0d2e40 state=finished raised ResourceExhausted>]
+2025-05-31 03:23:51,056 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d0d2c00 state=finished raised ResourceExhausted>]
+2025-05-31 03:31:01,532 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c77d0 state=finished raised ResourceExhausted>]
+2025-05-31 03:38:11,947 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2aa360 state=finished raised ResourceExhausted>]
+2025-05-31 03:45:25,923 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2a8470 state=finished raised ResourceExhausted>]
+2025-05-31 03:52:59,452 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2aafc0 state=finished raised ResourceExhausted>]
+2025-05-31 04:00:15,358 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c4590 state=finished raised ResourceExhausted>]
+2025-05-31 04:07:27,001 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c5ca0 state=finished raised ResourceExhausted>]
+2025-05-31 04:14:42,698 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c4e00 state=finished raised ResourceExhausted>]
+2025-05-31 04:21:58,563 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c5f70 state=finished raised ResourceExhausted>]
+2025-05-31 04:29:12,745 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c6ae0 state=finished raised ResourceExhausted>]
+2025-05-31 04:36:26,799 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c7350 state=finished raised ResourceExhausted>]
+2025-05-31 04:43:39,211 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2a8b60 state=finished raised ResourceExhausted>]
+2025-05-31 04:50:50,964 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c6ae0 state=finished raised ResourceExhausted>]
+2025-05-31 04:58:05,713 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c5670 state=finished raised ResourceExhausted>]
+2025-05-31 05:05:32,114 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12c650 state=finished raised ResourceExhausted>]
+2025-05-31 05:12:41,585 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2c7e00 state=finished raised ResourceExhausted>]
+2025-05-31 05:19:53,823 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d2a89b0 state=finished raised ResourceExhausted>]
+2025-05-31 05:27:05,367 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d0d3110 state=finished raised ResourceExhausted>]
+2025-05-31 05:34:21,771 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12d940 state=finished raised ResourceExhausted>]
+2025-05-31 05:41:38,036 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d12f800 state=finished raised ResourceExhausted>]
+2025-05-31 05:48:49,229 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d35c6e0 state=finished raised ResourceExhausted>]
+2025-05-31 05:56:01,490 - hallagent4rec_test_20250530_214714 - ERROR - LLM call failed completely: RetryError[<Future at 0x16d35c3b0 state=finished raised ResourceExhausted>]
+2025-05-31 05:56:03,048 - hallagent4rec_test_20250530_214714 - INFO - Step 2 (personality_generation): personality_vectors_shape: (943, 384), personality_vector_norm_mean: 1.0000
+2025-05-31 05:56:03,050 - hallagent4rec_test_20250530_214714 - INFO - Step 3 (attention_fusion): no metrics
+2025-05-31 05:56:03,121 - hallagent4rec_test_20250530_214714 - INFO - Step 3 (attention_fusion): fused_vectors_shape: (943, 32), fused_vector_norm_mean: 1.3666, attention_weight_mean: 0.5000
+2025-05-31 05:56:03,121 - hallagent4rec_test_20250530_214714 - INFO - Step 4 (context_learning): no metrics
+2025-05-31 05:56:03,152 - hallagent4rec_test_20250530_214714 - INFO - Step 4 (context_learning): context_weights_shape: (10,), item_biases_mean: 3.0872, item_biases_std: 0.7938
+2025-05-31 05:56:03,152 - hallagent4rec_test_20250530_214714 - INFO - Step 5 (transfer_matrix): no metrics
+2025-05-31 05:56:03,979 - hallagent4rec_test_20250530_214714 - INFO - Step 5 (transfer_matrix): transfer_matrix_shape: (32, 20), transfer_matrix_norm: 0.5939
+2025-05-31 05:56:03,979 - hallagent4rec_test_20250530_214714 - INFO - Step 6 (projection_matrix): no metrics
+2025-05-31 05:56:03,981 - hallagent4rec_test_20250530_214714 - INFO - Step 6 (projection_matrix): projection_matrix_shape: (8, 32), projection_matrix_norm: 2.8284
+2025-05-31 05:56:04,007 - hallagent4rec_test_20250530_214714 - INFO - Model saved: experiments/hallagent4rec_test_20250530_214714/models/hallagent4rec_model.pkl (0.81 MB)
+2025-05-31 05:56:04,007 - hallagent4rec_test_20250530_214714 - INFO - Training time: 8h 8m 43s
+2025-05-31 05:56:04,007 - hallagent4rec_test_20250530_214714 - INFO - Starting evaluation phase...
+2025-05-31 05:56:04,008 - hallagent4rec_test_20250530_214714 - INFO - Evaluating user 0/50
+2025-05-31 05:56:04,010 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 0: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,010 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 1: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,010 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 2: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,010 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 3: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,010 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 4: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,010 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 5: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,010 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 6: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,011 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 7: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,011 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 8: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,011 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 9: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,011 - hallagent4rec_test_20250530_214714 - INFO - Evaluating user 10/50
+2025-05-31 05:56:04,011 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 10: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,011 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 11: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,013 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 12: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,013 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 13: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,013 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 14: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,013 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 15: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,013 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 16: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,013 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 17: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,013 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 18: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,014 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 19: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,014 - hallagent4rec_test_20250530_214714 - INFO - Evaluating user 20/50
+2025-05-31 05:56:04,014 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 20: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,014 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 21: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,014 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 22: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,017 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 23: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,017 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 24: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,017 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 25: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 26: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 27: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 28: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 29: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - INFO - Evaluating user 30/50
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 30: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 31: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 32: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 33: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,018 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 34: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 35: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 36: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 37: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 38: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 39: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - INFO - Evaluating user 40/50
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 40: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 41: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 42: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 43: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 44: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 45: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 46: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,019 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 47: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,020 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 48: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,020 - hallagent4rec_test_20250530_214714 - ERROR - Error recommending for user 49: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 8 is different from 32)
+2025-05-31 05:56:04,244 - hallagent4rec_test_20250530_214714 - INFO - Evaluation (main_evaluation): RMSE: 2.4095, MAE: 2.0560, HitRate@5: 0.0163, NDCG@5: 0.0584, MRR@5: 0.0510, HitRate@10: 0.0569, NDCG@10: 0.1153, MRR@10: 0.0767, HitRate@20: 0.0506, NDCG@20: 0.1153, MRR@20: 0.0767, CatalogCoverage: 0.0071, AvgDiversity: 1.0000
+2025-05-31 05:56:04,245 - hallagent4rec_test_20250530_214714 - INFO - Creating visualizations...
+2025-05-31 05:56:06,238 - hallagent4rec_test_20250530_214714 - ERROR - Error creating distribution visualization: 'numpy.ndarray' object has no attribute 'hist'
+2025-05-31 05:56:06,255 - hallagent4rec_test_20250530_214714 - INFO - Data exported to CSV files
+2025-05-31 05:56:06,255 - hallagent4rec_test_20250530_214714 - INFO - Raw data saved: final_results.json
+2025-05-31 05:56:06,256 - hallagent4rec_test_20250530_214714 - INFO - Raw data saved: user_recommendations.json
+2025-05-31 05:56:06,257 - hallagent4rec_test_20250530_214714 - INFO - Experiment completed in 8h 8m 52s
+2025-05-31 05:56:06,257 - hallagent4rec_test_20250530_214714 - INFO - Report generated: experiments/hallagent4rec_test_20250530_214714/experiment_report.json
+2025-05-31 05:56:06,257 - hallagent4rec_test_20250530_214714 - INFO - ============================================================
+2025-05-31 05:56:06,257 - hallagent4rec_test_20250530_214714 - INFO - ANALYSIS COMPLETED SUCCESSFULLY!
+2025-05-31 05:56:06,257 - hallagent4rec_test_20250530_214714 - INFO - Total time: 8h 8m 52s
+2025-05-31 05:56:06,257 - hallagent4rec_test_20250530_214714 - INFO - Results saved in: experiments/hallagent4rec_test_20250530_214714
+2025-05-31 05:56:06,257 - hallagent4rec_test_20250530_214714 - INFO - ============================================================

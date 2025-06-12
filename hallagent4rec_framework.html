@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HallAgent4Rec Framework</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .framework-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .phase-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .phases-container {
+            display: flex;
+            gap: 2px;
+            height: 600px;
+        }
+        
+        .phase {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+            border-right: 2px solid #e9ecef;
+        }
+        
+        .phase:last-child {
+            border-right: none;
+        }
+        
+        .phase-title {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .component {
+            background: #ffffff;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .component:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .cf-component {
+            border-color: #28a745;
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+        }
+        
+        .gen-component {
+            border-color: #17a2b8;
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+        }
+        
+        .fusion-component {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+        }
+        
+        .transfer-component {
+            border-color: #6f42c1;
+            background: linear-gradient(135deg, #e2d9f3 0%, #d1c4e9 100%);
+        }
+        
+        .scoring-component {
+            border-color: #fd7e14;
+            background: linear-gradient(135deg, #fce8d0 0%, #fab570 100%);
+        }
+        
+        .hallucination-component {
+            border-color: #dc3545;
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+        }
+        
+        .component-title {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .arrow {
+            position: absolute;
+            font-size: 24px;
+            color: #6c757d;
+            z-index: 10;
+        }
+        
+        .arrow-right {
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .data-flow {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .user-input {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        .output-box {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="framework-container">
+        <div class="phase-header">
+            HallAgent4Rec: A Unified Framework for Reducing Hallucinations in LLM-Based Recommendation Agents
+        </div>
+        
+        <div class="phases-container">
+            <!-- Phase 1: Offline Representation Learning -->
+            <div class="phase">
+                <div class="phase-title">Phase 1: Offline Representation Learning</div>
+                <div class="arrow arrow-right">→</div>
+                
+                <div class="user-input">
+                    User-Item Interaction Matrix R<br>
+                    User Demographics<br>
+                    Item Features x_j
+                </div>
+                
+                <!-- CF Component -->
+                <div class="component cf-component">
+                    <div class="component-title">Collaborative Filtering</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        Matrix factorization of user-item interactions
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        → Behavioral user vectors u^cf_i
+                    </div>
+                </div>
+                
+                <!-- Generative Agent Component -->
+                <div class="component gen-component">
+                    <div class="component-title">Generative Agent Personality</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        LLM-based personality extraction using SentenceBERT
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        Demographics + genre preferences → personality vectors u^gen_i
+                    </div>
+                </div>
+                
+                <!-- Attention Fusion -->
+                <div class="component fusion-component">
+                    <div class="component-title">Attention-Based Fusion</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        Dynamic weighting of collaborative and personality signals
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        → Unified user representation u_i
+                    </div>
+                </div>
+                
+                <div class="data-flow">Behavioral + Semantic Fusion</div>
+            </div>
+            
+            <!-- Phase 2: Online Recommendation -->
+            <div class="phase">
+                <div class="phase-title">Phase 2: Online Recommendation</div>
+                <div class="arrow arrow-right">→</div>
+                
+                <!-- Transfer Matrix Learning -->
+                <div class="component transfer-component">
+                    <div class="component-title">Transfer Matrix Learning</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        Content-feature transfer matrix A & low-rank projection matrix B
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        Maps item features to collaborative latent space
+                    </div>
+                </div>
+                
+                <!-- Hybrid Scoring -->
+                <div class="component scoring-component">
+                    <div class="component-title">Hybrid Bilinear Scoring</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        Content + Online adaptation + Context + Bias components
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        Unified scoring mechanism for recommendation prediction
+                    </div>
+                </div>
+                
+                <!-- Online Updates -->
+                <div class="component cf-component">
+                    <div class="component-title">Online Parameter Updates</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        Real-time adaptation via reduced-rank regression
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        Updates item factors θ_j and bias terms b_j
+                    </div>
+                </div>
+                
+                <div class="output-box">
+                    Candidate List C<br>
+                    LLM Prompt Generation
+                </div>
+                
+                <div class="data-flow">Hybrid Scoring + Online Learning</div>
+            </div>
+            
+            <!-- Phase 3: Hallucination Mitigation -->
+            <div class="phase">
+                <div class="phase-title">Phase 3: Hallucination Mitigation</div>
+                
+                <div class="user-input">
+                    LLM Generated<br>
+                    Recommendations
+                </div>
+                
+                <!-- Binary Detection -->
+                <div class="component hallucination-component">
+                    <div class="component-title">Binary Hallucination Detection</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        Identify non-existent items in LLM recommendations
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        Check if recommended items exist in candidate set
+                    </div>
+                </div>
+                
+                <!-- Adaptive Replacement -->
+                <div class="component fusion-component">
+                    <div class="component-title">Rating-Aware Replacement</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        Adaptive balance between semantic similarity and predicted rating
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        Context-dependent α parameter based on user experience
+                    </div>
+                </div>
+                
+                <!-- Feature Extraction -->
+                <div class="component gen-component">
+                    <div class="component-title">Pseudo-Feature Extraction</div>
+                    <div style="font-size: 12px; color: #2c3e50; margin-top: 8px;">
+                        Extract semantic features from hallucinated item descriptions
+                    </div>
+                    <div style="font-size: 10px; color: #6c757d; margin-top: 5px;">
+                        LLM-based genre extraction and similarity computation
+                    </div>
+                </div>
+                
+                <div class="output-box">
+                    Final Recommendations<br>
+                    (Hallucination-Free)
+                </div>
+                
+                <div class="data-flow">Detection + Semantic Replacement</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

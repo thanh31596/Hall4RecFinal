@@ -1,0 +1,10 @@
+Overall Goal,Details,Deliverables
+Current Situation,"Reports from channels (Shopee, TikTok, Facebook...) are fragmented and manually compiled in Excel. There is no consolidated dashboard showing cross-department or cross-channel views. Limited ability to track campaign effectiveness in real-time.",
+Scope of Work,"1. Consulting to structure input data: reviewing current data sources and proposing transformation and storage methods (Excel, Sheets, SQL, etc.). 2. Building reporting dashboards: defining key metrics per department and designing visualizations aligned with management needs. 3. Training internal team for long-term usage.",
+Technical Requirements,"1. Proficiency in Power BI Desktop & Power Query. 2. Understanding of business metrics for marketing, sales, and HR. 3. Ability to connect and integrate multiple data sources. 4. Familiarity with Excel, Google Sheets, SQL, and APIs.",
+,,
+Work Items,Detailed Content,Final Deliverables
+Consult on Structuring Input Data,Review and audit current data sources. Provide data standardization checklist. Recommend appropriate formats and storage locations.,List of data needing standardization. Recommendations on format and storage locations.
+Design Report Structure,Design suitable data model. Draft dashboard layouts and report architecture.,Complete data model. Dashboard layout wireframes.
+Implement and Build Power BI Reports,"Connect data sources (Excel, Sheets, API...). Construct dashboards with visuals and filters by date, product, campaign, channel.",Power BI file with at least 4 dashboard pages.
+Training & Handover,Guide team on data updates and report operation. Ensure ability to maintain and expand dashboards independently.,Power BI file + user guide. Training video for internal use.
