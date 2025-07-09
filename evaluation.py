@@ -4,6 +4,53 @@ from typing import Dict, List, Tuple, Union, Set
 from collections import defaultdict
 import warnings
 
+# Adapter for HallAgent4Rec to work with RecommendationEvaluator
+class HallAgent4RecAdapter:
+    """
+    Adapter to make HallAgent4Rec compatible with RecommendationEvaluator's expected interface.
+    Exposes a recommend(user_id, n_items) method.
+    """
+    def __init__(self, hallagent, item_features, item_metadata, context_features=None, user_profiles=None):
+        self.hallagent = hallagent
+        self.item_features = item_features
+        self.item_metadata = item_metadata
+        self.context_features = context_features
+        self.user_profiles = user_profiles or {}
+
+    def recommend(self, user_id, n_items=10):
+        # Candidate items: all items except those already interacted with (if available)
+        num_items = self.item_features.shape[0]
+        candidate_items = list(range(num_items))
+        user_profile = self.user_profiles.get(user_id, "")
+        # Call HallAgent4Rec's online_recommendation
+        recs = self.hallagent.online_recommendation(
+            user_id=user_id,
+            candidate_items=candidate_items,
+            item_features=self.item_features,
+            item_metadata=self.item_metadata,
+            context_features=self.context_features,
+            user_profile=user_profile
+        )
+        # Return top n_items as item IDs (int)
+        # If recs is a list of "Movie ID X: ..." strings, extract the ID
+        item_ids = []
+        for r in recs:
+            if isinstance(r, int):
+                item_ids.append(r)
+            elif isinstance(r, str) and r.startswith("Movie ID"):
+                try:
+                    # Extract the number after 'Movie ID ' and subtract 1 (since +1 was used in prompt)
+                    item_id = int(r.split()[2].replace(":", "")) - 1
+                    item_ids.append(item_id)
+                except Exception:
+                    continue
+        return item_ids[:n_items]
+
+# Example usage:
+# evaluator = RecommendationEvaluator()
+# adapter = HallAgent4RecAdapter(hallagent, item_features, item_metadata)
+# results = evaluator.evaluate_recommendations(recommendations, ground_truth)
+
 class RecommendationEvaluator:
     """
     A comprehensive evaluator for recommendation systems supporting various metrics.

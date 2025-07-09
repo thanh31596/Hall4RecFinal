@@ -175,7 +175,8 @@ class HallAgent4Rec:
                                          scored_items: List[Tuple[int, float]],
                                          item_features: np.ndarray,
                                          item_metadata: Dict[int, Dict]) -> List[str]:
-        """Generate recommendations using LLM with safe retry logic"""
+        """Generate recommendations using LLM. If LLM fails or returns nothing, report and terminate."""
+        import sys
         # Get top-K scored items for LLM input
         top_items = scored_items[:20]
         
@@ -192,41 +193,34 @@ class HallAgent4Rec:
         # Create LLM prompt
         prompt = f"""You are a movie recommendation system for a user with the following profile: {user_profile}
 
-Based on the user's profile and preferences, here are some relevant movies from our catalog:
+        Based on the user's profile and preferences, here are some relevant movies from our catalog:
 
-{chr(10).join(item_descriptions)}
+        {chr(10).join(item_descriptions)}
 
-Please recommend exactly 10 movies from the list above that would be most relevant for this user.
-For each recommendation, provide the Movie ID and a brief explanation.
+        Please recommend exactly 10 movies from the list above that would be most relevant for this user.
+        For each recommendation, provide the Movie ID and a brief explanation.
 
-IMPORTANT: You must ONLY recommend movies from the provided list. Use the exact Movie ID format shown above.
+        IMPORTANT: You must ONLY recommend movies from the provided list. Use the exact Movie ID format shown above.
 
-Format your response as:
-Movie ID X: [Brief explanation]
-Movie ID Y: [Brief explanation]
-..."""
+        Format your response as:
+        Movie ID X: [Brief explanation]
+        Movie ID Y: [Brief explanation]
+        ..."""
 
         try:
-            # Use safe LLM invoke with retry logic
+            response_content = safe_llm_invoke(self.llm, prompt)
+            recommendations = self._parse_llm_response(response_content)
             print("Got the movie")
             print("="*60)
             print("Response content: ",response_content)
             print("="*60)
-
-            response_content = safe_llm_invoke(self.llm, prompt)
-            recommendations = self._parse_llm_response(response_content)
-            
             if not recommendations:
-                print("LLM returned empty recommendations, using fallback")
-                # Fallback to top scored items
-                recommendations = [f"Movie ID {item_id + 1}" for item_id, _ in top_items[:10]]
-            
+                print("LLM returned empty recommendations. Terminating program.")
+                sys.exit(1)
             return recommendations
-            
         except Exception as e:
-            print(f"Error generating LLM recommendations: {e}")
-            # Fallback to top scored items
-            return [f"Movie ID {item_id + 1}" for item_id, _ in top_items[:10]]
+            print(f"Error generating LLM recommendations: {e}. Terminating program.")
+            sys.exit(1)
     
     def _parse_llm_response(self, response: str) -> List[str]:
         """Parse LLM response to extract recommended items"""

@@ -437,11 +437,18 @@ def main():
             logger.logger.info("Skipping online recommendation phase (LLM not available)")
         
         # Evaluate results
+        # Only pass supported arguments: recommendations, ground_truth, catalog_size
+        # Here, user_recommendations is the recommendations, and test_df can be used to build ground_truth
+        # Build ground_truth: dict of user_id -> list of item_ids in test set
+        ground_truth = {}
+        for user_id in range(n_test_users):
+            user_items = test_df[test_df['user_id'] == user_id]['item_id'].tolist()
+            ground_truth[user_id] = user_items
+
         results = evaluator.evaluate_recommendations(
-            test_interactions=test_matrix[:n_test_users],
-            predictions=predictions,
-            user_recommendations=user_recommendations,
-            test_df=test_df[test_df['user_id'] <= n_test_users]
+            recommendations=user_recommendations,
+            ground_truth=ground_truth,
+            catalog_size=test_matrix.shape[1]
         )
         
         # Log evaluation results
